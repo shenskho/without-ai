@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import {http} from "../../api/http"
 
  const fetchProjects = createAsyncThunk("projects/fetchProjects",
-    async (_, thunkAPI){
+    async (_, thunkAPI)=>{
         try{
             const response = await http.get("api/Project/get-all-projects");
             return response.data.result.items
@@ -13,3 +13,5 @@ import {http} from "../../api/http"
     }
  )
 
+
+export default fetchProjects;
